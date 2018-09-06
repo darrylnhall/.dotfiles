@@ -53,7 +53,6 @@ set smartcase " Unless we type a capital letter.
 set backspace=indent,eol,start " Allow backspace to work 'normally'.
 
 " Mappings.
-inoremap jj <esc>
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
