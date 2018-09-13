@@ -1,6 +1,5 @@
 " Installed packages:
 " Solarized.
-" NERDTree.
 " Airline.
 " AirlineThemes.
 " Typescript-vim.
@@ -26,7 +25,6 @@ let g:airline_solarized_bg='dark'
 " Custom Settings.
 " Visual Decoration.
 syntax enable
-set t_Co=256
 colorscheme solarized
 set background=dark
 set number " Show line numbers.
@@ -60,6 +58,5 @@ set ignorecase " Ignore cases in file search.
 set smartcase " Unless we type a capital letter.
 
 " Mappings.
-map <leader>n :NERDTreeToggle<CR>
 map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
