@@ -12,6 +12,9 @@ call pathogen#helptags()
 " Use Vim features, not Vi.
 set nocompatible
 
+" Set <leader> key.
+let mapleader = ","
+
 " CtrlP.
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = 'ra'
@@ -28,6 +31,7 @@ syntax enable
 colorscheme solarized
 set background=dark
 set number " Show line numbers.
+set numberwidth=5
 set showmatch " Highlight matching [{()}].
 set colorcolumn=81 " Highlight 81st column for visual reference.
 set cursorline " Highlight current line.
