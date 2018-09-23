@@ -1,16 +1,23 @@
-" Installed packages:
-" Solarized.
-" Airline.
-" AirlineThemes.
-" Typescript-vim.
-" CtrlP.
-
-" Pathogen.
-execute pathogen#infect()
-call pathogen#helptags()
-
 " Use Vim features, not Vi.
 set nocompatible
+filetype off " Required for Vundle.
+
+" Set the runtime path to include Vundle and initialize.
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle.
+Plugin 'VundleVim/Vundle.vim'
+
+" User plugins below.
+Plugin 'vim-airline/vim-airline'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+filetype plugin indent on
 
 " Set <leader> key.
 let mapleader = ","
@@ -21,15 +28,11 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 
-" Airline.
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg='dark'
-
 " Custom Settings.
 " Visual Decoration.
-syntax enable
-colorscheme solarized
-set background=dark
+set termguicolors
+syntax on
+colorscheme gruvbox
 set number " Show line numbers.
 set numberwidth=5
 set showmatch " Highlight matching [{()}].
@@ -37,15 +40,15 @@ set colorcolumn=81 " Highlight 81st column for visual reference.
 set cursorline " Highlight current line.
 
 " Interactions.
-set scrolloff=3 " Start scrolling just before the cursor reaches the edge.
+set scrolloff=8 " Start scrolling just before the cursor reaches the edge.
 set eol " Add a new line character at the end of any file.
 
 " OS interaction.
 set noswapfile " Let's not use swap files. Probably not best practice.
 set clipboard=unnamed " Use os clipboard.
+let g:python_recommended_style=0 " Stop BREWed PEP8 styles overriding vimrc.
 
 " Text management.
-filetype plugin indent on
 set smartindent
 set autoindent
 set shiftwidth=2 " Number of spaces when shift indenting.
@@ -64,3 +67,4 @@ set smartcase " Unless we type a capital letter.
 " Mappings.
 map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
+map <leader>n :NERDTreeToggle<CR>
