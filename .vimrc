@@ -50,7 +50,6 @@ let g:python_recommended_style=0 " Stop BREWed PEP8 styles overriding vimrc.
 
 " Text management.
 set smartindent
-set autoindent
 set shiftwidth=2 " Number of spaces when shift indenting.
 set tabstop=2 " Number of visual spaces per tab.
 set softtabstop=2 " Number of spaces in tab when editing.
