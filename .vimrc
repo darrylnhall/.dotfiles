@@ -11,9 +11,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " User plugins below.
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
@@ -28,16 +29,21 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 
+" Airline.
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg='dark'
+
 " Custom Settings.
 " Visual Decoration.
-set termguicolors
-syntax on
-colorscheme gruvbox
+syntax enable
+set background=dark
+colorscheme solarized
 set number " Show line numbers.
 set numberwidth=5
 set showmatch " Highlight matching [{()}].
-set colorcolumn=81 " Highlight 81st column for visual reference.
 set cursorline " Highlight current line.
+set cursorcolumn " Highlight current column.
+set colorcolumn=81 " Highlight 81st column for visual reference.
 
 " Interactions.
 set scrolloff=8 " Start scrolling just before the cursor reaches the edge.
