@@ -39,10 +39,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 set number " Show line numbers.
-set numberwidth=5
 set showmatch " Highlight matching [{()}].
 set cursorline " Highlight current line.
-set cursorcolumn " Highlight current column.
 set colorcolumn=81 " Highlight 81st column for visual reference.
 
 " Interactions.
@@ -60,7 +58,6 @@ set shiftwidth=2 " Number of spaces when shift indenting.
 set tabstop=2 " Number of visual spaces per tab.
 set softtabstop=2 " Number of spaces in tab when editing.
 set expandtab " Tab to spaces.
-set nowrap " No line-wrapping.
 set backspace=indent,eol,start " Allow backspace to work 'normally'.
 
 " Search.
