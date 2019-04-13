@@ -1,18 +1,16 @@
-# Change the bash prompt to: [24h Time] ~/dir $
-export PS1="[\A] \w \\$ "
-
-# Show me the colours.
-export CLICOLOR=1
+# Change the bash prompt to: /dir $
+export PS1="[\w] \\$ "
 
 # Show me the files.
+alias ls='ls -G'
 alias lsa='ls -la'
 
-# Bat rules.
-alias cat='bat'
-
 # Enable Google Cloud SDK command completion.
-export PATH=$PATH:$HOME/bin/google-cloud-sdk/bin:$HOME/bin/google-cloud-sdk/platform/google_appengine
+export PATH=$PATH:$HOME/bin/google-cloud-sdk/bin
 
 # Enable NVM command completion.
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# Require virtual environment for PIP installations
+export PIP_REQUIRE_VIRTUALENV=true
