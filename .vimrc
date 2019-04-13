@@ -10,12 +10,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " User plugins below.
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -25,7 +25,7 @@ let mapleader = ","
 
 " CtrlP.
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 
@@ -67,6 +67,6 @@ set ignorecase " Ignore cases in file search.
 set smartcase " Unless we type a capital letter.
 
 " Mappings.
-map <leader>f :CtrlP<CR>
+map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>n :NERDTreeToggle<CR>
