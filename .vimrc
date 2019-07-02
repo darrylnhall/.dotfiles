@@ -15,7 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -30,14 +30,12 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 
 " Airline.
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme = 'base16'
 
 " Custom Settings.
 " Visual Decoration.
-syntax enable
-set background=dark
-colorscheme solarized
+syntax on
+colorscheme base16-default-dark
 set number " Show line numbers.
 set showmatch " Highlight matching [{()}].
 set cursorline " Highlight current line.
@@ -47,7 +45,7 @@ set colorcolumn=81 " Highlight 81st column for visual reference.
 set scrolloff=8 " Start scrolling just before the cursor reaches the edge.
 set eol " Add a new line character at the end of any file.
 
-" OS interaction.
+" OS interactions.
 set noswapfile " Let's not use swap files. Probably not best practice.
 set clipboard=unnamed " Use os clipboard.
 let g:python_recommended_style=0 " Stop BREWed PEP8 styles overriding vimrc.
@@ -57,7 +55,7 @@ set smartindent
 set shiftwidth=2 " Number of spaces when shift indenting.
 set tabstop=2 " Number of visual spaces per tab.
 set softtabstop=2 " Number of spaces in tab when editing.
-set expandtab " Tab to spaces.
+set expandtab " Tabs to spaces.
 set backspace=indent,eol,start " Allow backspace to work 'normally'.
 
 " Search.
