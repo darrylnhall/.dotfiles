@@ -1,10 +1,6 @@
 # Change the bash prompt to: /dir $
 export PS1="[\w] \\$ "
 
-# Show me the files.
-alias ls="ls -G"
-alias lsa="ls -la"
-
 # Git.
 alias gs="git status"
 alias gl="git log"
