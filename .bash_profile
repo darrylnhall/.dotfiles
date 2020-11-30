@@ -21,5 +21,5 @@ export PATH=$PATH:$HOME/bin/google-cloud-sdk/bin
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# Require virtual environment for PIP installations
+# Require virtual environment for PIP installations.
 export PIP_REQUIRE_VIRTUALENV=true
