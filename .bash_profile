@@ -6,13 +6,17 @@ alias ls="ls -G"
 alias lsa="ls -la"
 
 # Git.
+alias gs="git status"
 alias gl="git log"
-alias glg="git log --graph"
-alias glga="git log --graph --all"
+alias glog="git log --oneline --graph"
+alias gloag="git log --oneline --all --graph"
 alias gap="git add --patch"
 
 # Super secure encrypt.
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+# Enable pip command completion.
+export PATH=$PATH:$HOME/Library/Python/2.7/bin
 
 # Enable Google Cloud SDK command completion.
 export PATH=$PATH:$HOME/bin/google-cloud-sdk/bin
