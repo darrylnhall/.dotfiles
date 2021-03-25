@@ -1,5 +1,5 @@
-# Change the bash prompt to: /dir $
-export PS1="[\w] \\$ "
+# Change the zsh prompt.
+export PROMPT="%~ %# "
 
 # Show me the files.
 alias ls="ls -G"
@@ -9,7 +9,7 @@ alias lsa="ls -a -G"
 alias gs="git status"
 alias gl="git log"
 alias glog="git log --oneline --graph"
-alias gloag="git log --oneline --all --graph"
+alias gloga="git log --oneline --graph --all"
 alias gap="git add --patch"
 
 # Super secure encrypt.
