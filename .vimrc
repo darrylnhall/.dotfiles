@@ -1,41 +1,56 @@
 " Use Vim features, not Vi.
 set nocompatible
+
 filetype off " Required for Vundle.
 
 " Set the runtime path to include Vundle and initialize.
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set shellslash
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin('~/vimfiles/bundle')
 
 " Let Vundle manage Vundle.
 Plugin 'VundleVim/Vundle.vim'
 
 " User plugins below.
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'chriskempson/base16-vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 call vundle#end()
 filetype plugin indent on
+
+set belloff=all
+
+if has("gui_running")
+  set guifont=Consolas:h12
+  set guioptions-=T
+  set guioptions-=t
+endif
 
 " Set <leader> key.
 let mapleader = ","
 
 " CtrlP.
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/vimfiles/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 
+" Ack.
+let g:ackprg = 'ag --vimgrep'
+
 " Airline.
-let g:airline_theme = 'base16'
+let g:airline_theme = 'dracula'
 
 " Custom Settings.
 " Visual Decoration.
+set termguicolors
 syntax on
-colorscheme base16-default-dark
+colorscheme dracula
 set number " Show line numbers.
 set showmatch " Highlight matching [{()}].
 set cursorline " Highlight current line.
@@ -48,13 +63,12 @@ set eol " Add a new line character at the end of any file.
 " OS interactions.
 set noswapfile " Let's not use swap files. Probably not best practice.
 set clipboard=unnamed " Use os clipboard.
-let g:python_recommended_style=0 " Stop BREWed PEP8 styles overriding vimrc.
 
 " Text management.
 set smartindent
-set shiftwidth=2 " Number of spaces when shift indenting.
-set tabstop=2 " Number of visual spaces per tab.
-set softtabstop=2 " Number of spaces in tab when editing.
+set shiftwidth=4 " Number of spaces when shift indenting.
+set tabstop=4 " Number of visual spaces per tab.
+set softtabstop=4 " Number of spaces in tab when editing.
 set expandtab " Tabs to spaces.
 set backspace=indent,eol,start " Allow backspace to work 'normally'.
 
@@ -68,3 +82,6 @@ set smartcase " Unless we type a capital letter.
 map <leader>p :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>n :NERDTreeToggle<CR>
+
+" Files.
+autocmd BufNewFile,BufRead *.njk set filetype=html
